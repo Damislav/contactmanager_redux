@@ -27,18 +27,18 @@ const initialState = {
 };
 export default function (state = initialState, action) {
   switch (action.type) {
-    case "GET_CONTACTS":
+    case GET_CONTACTS:
       return {
         ...state,
       };
-    case "DELETE_CONTACTS":
+    case DELETE_CONTACTS:
       return {
         ...state,
         contacts: state.contacts.filter((contact) => {
           return contact.id !== action.payload;
         }),
       };
-    case "ADD_CONTACTS":
+    case ADD_CONTACTS:
       return {
         ...state,
         contacts: [action.payload, ...state.contacts],
