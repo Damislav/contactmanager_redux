@@ -20,11 +20,12 @@ class EditContact extends Component {
       phone,
     });
   }
+
   componentDidMount() {
     const { id } = this.props.match.params;
     this.props.getContact(id);
-    // console.log(this.props.match.params);
   }
+
   onSubmit = (e) => {
     e.preventDefault();
 
@@ -45,7 +46,9 @@ class EditContact extends Component {
       this.setState({ errors: { phone: "Phone is required" } });
       return;
     }
+
     const { id } = this.props.match.params;
+
     const updContact = {
       id,
       name,
@@ -54,7 +57,6 @@ class EditContact extends Component {
     };
 
     this.props.updateContact(updContact);
-    //// UPDATE CONTACT ////
 
     // Clear State
     this.setState({
@@ -113,13 +115,16 @@ class EditContact extends Component {
     );
   }
 }
+
 EditContact.propTypes = {
   contact: PropTypes.object.isRequired,
   getContact: PropTypes.func.isRequired,
 };
+
 const mapStateToProps = (state) => ({
-  contact: state.contact,
+  contact: state.contact.contact,
 });
+
 export default connect(mapStateToProps, { getContact, updateContact })(
   EditContact
 );
