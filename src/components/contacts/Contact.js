@@ -2,15 +2,14 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { deleteContact } from "../../actions/contactAction";
+import { deleteContact } from "../../redux/actions/contactAction";
 class Contact extends Component {
   state = {
     showContactInfo: false,
   };
 
   onDeleteClick = (id) => {
-    //// DELETE CONTACT ////
-    this.props.deleteContact(id);
+    deleteContact(id);
   };
 
   render() {
@@ -20,7 +19,7 @@ class Contact extends Component {
     return (
       <div className="card card-body mb-3">
         <h4>
-          {name} 
+          {name}
           <i
             onClick={() =>
               this.setState({

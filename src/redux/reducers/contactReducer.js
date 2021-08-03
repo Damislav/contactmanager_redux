@@ -1,10 +1,10 @@
 import {
-  GET_CONTACTS,
-  DELETE_CONTACTS,
   ADD_CONTACTS,
+  DELETE_CONTACTS,
   GET_CONTACT,
+  GET_CONTACTS,
   UPDATE_CONTACT,
-} from "../../actions/types";
+} from "../actions/types";
 
 const initialState = {
   contacts: [],

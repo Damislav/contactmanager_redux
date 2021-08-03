@@ -1,9 +1,11 @@
 import axios from "axios";
-import { GET_CONTACT, GET_CONTACTS } from "./types";
-import { ADD_CONTACTS } from "./types";
-import { DELETE_CONTACTS } from "./types";
-import { UPDATE_CONTACT } from "./types";
-
+import {
+  ADD_CONTACTS,
+  DELETE_CONTACTS,
+  GET_CONTACT,
+  GET_CONTACTS,
+  UPDATE_CONTACT,
+} from "./types";
 
 export const getContacts = () => async (dispatch) => {
   const res = await axios.get("https://jsonplaceholder.typicode.com/users");

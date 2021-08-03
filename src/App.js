@@ -7,28 +7,24 @@ import Header from "./components/layout/Header";
 import About from "./components/pages/About";
 import NotFound from "./components/pages/NotFound";
 import "bootstrap/dist/css/bootstrap.min.css";
-import store from "./store";
-import { Provider } from "react-redux";
 
 class App extends Component {
   render() {
     return (
-      <Provider store={store}>
-        <Router>
-          <div className="App">
-            <Header branding="Contact Manager" />
-            <div className="container">
-              <Switch>
-                <Route exact path="/" component={Contacts} />
-                <Route exact path="/contact/add" component={AddContact} />
-                <Route exact path="/contact/edit/:id" component={EditContact} />
-                <Route exact path="/about" component={About} />
-                <Route component={NotFound} />
-              </Switch>
-            </div>
+      <Router>
+        <div className="App">
+          <Header branding="Contact Manager" />
+          <div className="container">
+            <Switch>
+              <Route exact path="/" component={Contacts} />
+              <Route exact path="/contact/add" component={AddContact} />
+              <Route exact path="/contact/edit/:id" component={EditContact} />
+              <Route exact path="/about" component={About} />
+              <Route component={NotFound} />
+            </Switch>
           </div>
-        </Router>
-      </Provider>
+        </div>
+      </Router>
     );
   }
 }

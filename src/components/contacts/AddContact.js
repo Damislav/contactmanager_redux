@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import TextInputGroup from "../layout/TextInputGroup";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { addContacts } from "../../actions/contactAction";
+import { addContacts } from "../../redux/actions/contactAction";
 
 class AddContact extends Component {
   state = {

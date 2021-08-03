@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import TextInputGroup from "../layout/TextInputGroup";
 import { connect } from "react-redux";
-import { getContact, updateContact } from "../../actions/contactAction";
+import { getContact, updateContact } from "../../redux/actions/contactAction";
 import PropTypes from "prop-types";
 
 class EditContact extends Component {
@@ -30,8 +30,6 @@ class EditContact extends Component {
     e.preventDefault();
 
     const { name, email, phone } = this.state;
-
-    // Check For Errors
     if (name === "") {
       this.setState({ errors: { name: "Name is required" } });
       return;
@@ -46,7 +44,6 @@ class EditContact extends Component {
       this.setState({ errors: { phone: "Phone is required" } });
       return;
     }
-
     const { id } = this.props.match.params;
 
     const updContact = {
